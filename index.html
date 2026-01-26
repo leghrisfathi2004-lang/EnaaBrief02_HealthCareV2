@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <title>Document</title>
+</head>
+<body class="min-h-screen bg-gradient-to-b from-[#3386E0] via-[#4DA6FF] to-[#80E5FF] flex flex-col items-center gap-5 text-[#002B5B] dark:">
+
+    <img src="images/profile_medical.png" class="w-50">
+    <div class="flex flex-col gap-3 w-[80%]">
+        <div class="w-full">
+            <h1 class="text-lg pl-3 text-whit font-semibold">nom complete:</h1>
+            <input type="text" class="bg-white/20 border border-white/30 rounded-xl px-3 w-full py-2" placeholder="entre nom complete">
+        </div>
+        <div class="w-full">
+            <h1 class="text-lg pl-3 text-whit font-semibold">email:</h1>
+            <input type="text" class="bg-white/20 border border-white/30 rounded-xl px-3 w-full py-2" placeholder="entre email">
+        </div>
+        <div class="w-full">
+            <h1 class="text-lg pl-3 text-whit font-semibold">telephone:</h1>
+            <input type="text" class="bg-white/20 border border-white/30 rounded-xl px-3 w-full py-2" placeholder="entre numero de telephone">
+        </div>
+        <div class="w-full">
+            <h1 class="text-lg pl-3 text-whit font-semibold">motif:</h1>
+            <input type="text" class="bg-white/20 border border-white/30 rounded-xl px-3 w-full py-2" placeholder="entre motif">
+        </div>
+        <div class="w-full">
+            <h1 class="text-lg pl-3 text-whit font-semibold">Date:</h1>
+            <input type="date" class="bg-white/20 border border-white/30 rounded-xl px-3 w-full py-2">
+        </div>
+
+        <div class="flex justify-center items-center gap-5 font-semibold pb-5">
+            <button id="btnCancel" class="w-[50%] p-3 bg-white text-red-500 rounded-xl hover:scale-[1.05]">Cancel</button>
+            <button id="btnSave" class="w-[50%] p-3 bg-white text-[#007FFF] rounded-xl hover:scale-[1.05]">Save</button>
+        </div>
+    </div>
+
+    
+
+
+    
+</body>
+</html>
