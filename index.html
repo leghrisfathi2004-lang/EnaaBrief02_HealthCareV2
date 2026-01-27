@@ -7,35 +7,97 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
     <title>Document</title>
 </head>
-<body class="min-h-screen bg-gradient-to-b from-[#3386E0] via-[#4DA6FF] to-[#80E5FF] flex flex-col items-center gap-5 text-[#002B5B] dark:">
+<body class="min-h-screen bg-gradient-to-b from-[#3386E0] via-[#4DA6FF] to-[#80E5FF] text-[#002B5B] dark:from-[#040D1A] dark:via-[#0A192F] dark:to-[#112240] dark:text-white">
 
-    <img src="images/profile_medical.png" class="w-50">
-    <div class="flex flex-col gap-3 w-[80%]">
-        <div class="w-full">
-            <h1 class="text-lg pl-3 text-whit font-semibold">nom complete:</h1>
-            <input type="text" class="bg-white/20 border border-white/30 rounded-xl px-3 w-full py-2" placeholder="entre nom complete">
+    <div id="" class="hidden flex flex-col items-center gap-3">
+        <img src="images/profile_medical.png" class="w-30 mt-2 bg-white/20 border border-white/30 rounded-full">
+        <div class="flex flex-col gap-3 w-[80%]">
+            <div class="w-full">
+                <h1 class="pl-3 text-whit font-semibold">nom complete:</h1>
+                <input type="text" class="bg-white/20 border border-white/30 rounded-lg px-3 w-full py-1" placeholder="entre nom complete">
+            </div>
+            <div class="w-full">
+                <h1 class="pl-3 text-whit font-semibold">email:</h1>
+                <input type="text" class="bg-white/20 border border-white/30 rounded-lg px-3 w-full py-1" placeholder="entre email">
+            </div>
+            <div class="w-full">
+                <h1 class="pl-3 text-whit font-semibold">telephone:</h1>
+                <input type="text" class="bg-white/20 border border-white/30 rounded-lg px-3 w-full py-1" placeholder="entre numero de telephone">
+            </div>
+            <div class="w-full">
+                <h1 class="pl-3 text-whit font-semibold">motif:</h1>
+                <select id="motif" class="bg-white/20 border border-white/30 rounded-lg px-3 w-full py-1" required>
+                    <option class="dark:bg-black" value="">-- Sélectionnez un motif --</option>
+                    <option class="dark:bg-black" value="consultation">Consultation</option>
+                    <option class="dark:bg-black" value="suivi">Suivi médical</option>
+                    <option class="dark:bg-black" value="urgence">Urgence</option>
+                    <option class="dark:bg-black" value="bilan">Bilan de santé</option>
+                    <option class="dark:bg-black" value="examen">Examen</option>
+                    <option class="dark:bg-black" value="analyse">Analyse</option>
+                    <option class="dark:bg-black" value="vaccination">Vaccination</option>
+                    <option class="dark:bg-black" value="certificat">Certificat</option>
+                </select>
+            </div>
+
+            <div class="w-full">
+                <h1 class="pl-3 text-whit font-semibold">Date:</h1>
+                <input type="date" class="bg-white/20 border border-white/30 rounded-lg px-3 w-full py-1">
+            </div>
+
+            <div class="flex justify-center items-center gap-5 font-semibold pb-5">
+                <button id="btnCancel" class="w-[50%] p-1 bg-white text-red-500 rounded-lg hover:scale-[1.05]">Cancel</button>
+                <button id="btnSave" class="w-[50%] p-1 bg-white text-[#007FFF] rounded-lg hover:scale-[1.05]">Save</button>
+            </div>
         </div>
-        <div class="w-full">
-            <h1 class="text-lg pl-3 text-whit font-semibold">email:</h1>
-            <input type="text" class="bg-white/20 border border-white/30 rounded-xl px-3 w-full py-2" placeholder="entre email">
+    </div>
+    
+    <div class="h-full w-full flex flex-col items-center m-1">
+        <div class="w-full h-20 flex justify-center items-center">
+            <h1 class="text-2xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-br from-white/100 to-white/30 backdrop-blur-sm drop-shadow-xl">
+                Gestion des rendez-vous</h1>
         </div>
-        <div class="w-full">
-            <h1 class="text-lg pl-3 text-whit font-semibold">telephone:</h1>
-            <input type="text" class="bg-white/20 border border-white/30 rounded-xl px-3 w-full py-2" placeholder="entre numero de telephone">
+        <div class="w-full flex gap-1">
+            <!--search + button add + button filter-->
+            <div class="w-[45%] h-[40px] p-1 bg-white/20 border border-white/30 rounded-lg flex items-center ">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="search" class="w-full p-1">
+            </div>
+            <select id="filter" class="bg-white/20 border border-white/30 rounded-lg px-3 w-[30%] py-1" required>
+                    <option class="dark:bg-black" value=""> filter</option>
+                    <option class="dark:bg-black" value="consultation">Consultation</option>
+                    <option class="dark:bg-black" value="suivi">Suivi médical</option>
+                    <option class="dark:bg-black" value="urgence">Urgence</option>
+                    <option class="dark:bg-black" value="bilan">Bilan de santé</option>
+                    <option class="dark:bg-black" value="examen">Examen</option>
+                    <option class="dark:bg-black" value="analyse">Analyse</option>
+                    <option class="dark:bg-black" value="vaccination">Vaccination</option>
+                    <option class="dark:bg-black" value="certificat">Certificat</option>
+            </select>
+
+            <button class="w-[%] bg-white/50 border border-white/90 text-[#007FFF] rounded-lg p-2 text-center">search</button>
         </div>
-        <div class="w-full">
-            <h1 class="text-lg pl-3 text-whit font-semibold">motif:</h1>
-            <input type="text" class="bg-white/20 border border-white/30 rounded-xl px-3 w-full py-2" placeholder="entre motif">
-        </div>
-        <div class="w-full">
-            <h1 class="text-lg pl-3 text-whit font-semibold">Date:</h1>
-            <input type="date" class="bg-white/20 border border-white/30 rounded-xl px-3 w-full py-2">
+        <button class="bg-white/50 p-1">+ajouter</button>
+        
+        <div class="bg-blue-800 w-screen h-auto">
+            <table class="w-full text-left max-w-full text-sm"> 
+                    <thead class="bg-[#6DA9A6] uppercase text-white">
+                        <tr>
+                            <!--done the table + the buttons-->
+                            <th class="px-2 rounded-tl-xl">ID</th>
+                            <th class="px-2">Full Name</th>
+                            <th class="px-2">Telephone</th>
+                            <th class="px-2">Email</th>
+                            <th class="px-2">Reason</th>
+                            <th class="px-2">Date</th>
+                            <th class="px-2 rounded-tr-xl">Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="tbody">
+                    </tbody>
+                </table>
         </div>
 
-        <div class="flex justify-center items-center gap-5 font-semibold pb-5">
-            <button id="btnCancel" class="w-[50%] p-3 bg-white text-red-500 rounded-xl hover:scale-[1.05]">Cancel</button>
-            <button id="btnSave" class="w-[50%] p-3 bg-white text-[#007FFF] rounded-xl hover:scale-[1.05]">Save</button>
-        </div>
     </div>
 
     
