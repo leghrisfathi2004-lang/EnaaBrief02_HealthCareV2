@@ -9,12 +9,20 @@
 </head>
 <body class="min-h-screen bg-gradient-to-b from-[#3386E0] via-[#4DA6FF] to-[#80E5FF] text-[#002B5B] dark:from-[#040D1A] dark:via-[#0A192F] dark:to-[#112240] dark:text-white">
 
-    <div id="" class="hidden flex flex-col items-center gap-3">
-        <img src="images/profile_medical.png" class="w-30 mt-2 bg-white/20 border border-white/30 rounded-full">
+    <div id="modal" class="hidden flex flex-col items-center gap-3">
+        <div class="w-full flex items-center justify-center">
+            <h1 class="mt-2 bg-white/20 border border-white/30 rounded-lg w-[50%] text-center font-bold text-lg py-4 m-5">Ajouter un rendez-vous</h1>
+
+            <div id="message" class="absolute left-1 top-1 mx-auto w-max z-20 rounded-xl px-4 py-2 text-sm font-bold bg-red-500/90 text-white backdrop-blur-md border border-white/20 shadow-lg transition-all duration-500 ease-out pointer-events-none -translate-x-full opacity-0">
+                <i class="fa-solid fa-circle-exclamation mr-2"></i> Champs requis manquants
+            </div>
+        </div>
+        
+        
         <div class="flex flex-col gap-3 w-[80%]">
             <div class="w-full">
                 <h1 class="pl-3 text-whit font-semibold">nom complete:</h1>
-                <input id="fullName" type="text" class="bg-white/20 border border-white/30 rounded-lg px-3 w-full py-1" placeholder="entre nom complete">
+                <input id="nom" type="text" class="bg-white/20 border border-white/30 rounded-lg px-3 w-full py-1" placeholder="entre nom complete">
             </div>
             <div class="w-full">
                 <h1 class="pl-3 text-whit font-semibold">email:</h1>
@@ -22,7 +30,7 @@
             </div>
             <div class="w-full">
                 <h1 class="pl-3 text-whit font-semibold">telephone:</h1>
-                <input id="phone" type="text" class="bg-white/20 border border-white/30 rounded-lg px-3 w-full py-1" placeholder="entre numero de telephone">
+                <input id="telephone" type="text" class="bg-white/20 border border-white/30 rounded-lg px-3 w-full py-1" placeholder="entre numero de telephone">
             </div>
             <div class="w-full">
                 <h1 class="pl-3 text-whit font-semibold">motif:</h1>
@@ -50,19 +58,22 @@
             </div>
         </div>
     </div>
-    
-    <div class=" h-full w-full flex flex-col items-center gap-2 m-1">
+    <!--2nd partie--------------------->
+    <div id="list" class="h-full w-full flex flex-col items-center gap-2 m-1 p-2">
         <div class="w-full h-20 flex justify-center items-center">
             <h1 class="text-2xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-br from-white/100 to-white/30 backdrop-blur-sm drop-shadow-xl">
                 Gestion des rendez-vous</h1>
         </div>
-        <div class="w-full flex gap-1">
+        <div class="w-full flex flex-col gap-1 items-center">
             <!--search + button add + button filter-->
-            <div class="w-[45%] h-[40px] p-1 bg-white/20 border border-white/30 rounded-lg flex items-center ">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                <input id="search" type="text" placeholder="search" class="w-full p-1">
+            
+            <div class="w-full h-[40px] bg-white/20 border border-white/30 rounded-lg flex items-center">
+                <i class="p-2 fa-solid fa-magnifying-glass"></i>
+                <input id="search" type="text" placeholder="search" class="w-full px-4">
             </div>
-            <select id="filter" class="bg-white/20 border border-white/30 rounded-lg px-3 w-[30%] py-1" required>
+            
+            <div class="w-full flex justify-center gap-2">
+                <select id="filter" class="bg-white/20 border border-white/30 rounded-lg pl-2 w-[49%] py-1" required>
                     <option class="dark:bg-black" value=""> filter</option>
                     <option class="dark:bg-black" value="consultation">Consultation</option>
                     <option class="dark:bg-black" value="suivi">Suivi médical</option>
@@ -72,11 +83,14 @@
                     <option class="dark:bg-black" value="analyse">Analyse</option>
                     <option class="dark:bg-black" value="vaccination">Vaccination</option>
                     <option class="dark:bg-black" value="certificat">Certificat</option>
-            </select>
-            <button id="btnAjouter" class="w-[%] bg-white/50 border border-white/90 text-[#007FFF] rounded-lg p-2 text-center">+ ajouter</button>
-        </div>
-        
+                </select>
+                <button id="btnAjouter" class="w-[49%] bg-white/30 border border-white/50 text-[#007FFF] px-6 py-2 rounded-lg transition-all duration-300 hover:bg-white/40 hover:shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:-translate-y-0.5 active:scale-95">
+                    + ajouter
+                </button>
+            </div>
 
+        </div>
+        <!--tableau ------->
         <div class="w-full overflow-x-auto rounded-lg border border-white/40 bg-white/30 backdrop-blur-md shadow-lg">
             <table class="w-full text-left border-collapse">
                 <thead class="bg-white/20 text-[#002B5B] uppercase text-sm font-bold">
@@ -103,7 +117,7 @@
                 </tbody>
             </table>
         </div>
-
+        <!--pagination --------->
         <div id="pagination" class="flex flex-row justify-center items-center gap-5 p-4">
                 <button id="btnLeft" class="text-xl px-2 py-1 rounded-lg bg-white/40 hover:bg-white/60 border border-white/50 text-[#002B5B] backdrop-blur-md transition-all shadow-sm">
                     <i class="fa-solid fa-angle-left"></i>
@@ -115,6 +129,7 @@
                     <i class="fa-solid fa-angle-right"></i>
                 </button>
             </div>
+            
     </div>
     <script src="script.js"></script>
 </body>
