@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
     <title>Document</title>
 </head>
-<body class="min-h-screen bg-gradient-to-b from-[#3386E0] via-[#4DA6FF] to-[#80E5FF] text-[#002B5B] dark:from-[#040D1A] dark:via-[#0A192F] dark:to-[#112240] dark:text-white">
+<body class="min-h-screen w-full overflow-x-hidden bg-gradient-to-b from-[#3386E0] via-[#4DA6FF] to-[#80E5FF] text-[#002B5B] dark:from-[#040D1A] dark:via-[#0A192F] dark:to-[#112240] dark:text-white antialiased lg:flex lg:justify-center">
 
     <div id="modal" class="hidden flex flex-col items-center gap-3">
         <div class="w-full flex items-center justify-center">
@@ -34,10 +34,10 @@
             </div>
             <div class="w-full">
                 <h1 class="pl-3 text-whit font-semibold">motif:</h1>
-                <select id="motif" class="bg-white/20 border border-white/30 rounded-lg px-3 w-full py-1" required>
+                <select id="motif" class="bg-white/20 border border-white/30 rounded-lg px-3 w-full py-1">
                     <option class="dark:bg-black" value="">-- Sélectionnez un motif --</option>
                     <option class="dark:bg-black" value="consultation">Consultation</option>
-                    <option class="dark:bg-black" value="suivi">Suivi médical</option>
+                    <option class="dark:bg-black" value="suivi médical">Suivi médical</option>
                     <option class="dark:bg-black" value="urgence">Urgence</option>
                     <option class="dark:bg-black" value="bilan">Bilan de santé</option>
                     <option class="dark:bg-black" value="examen">Examen</option>
@@ -53,38 +53,38 @@
             </div>
 
             <div class="flex justify-center items-center gap-5 font-semibold pb-5">
-                <button id="btnCancel" class="w-[50%] p-1 bg-white text-red-500 rounded-lg hover:scale-[1.05]">Cancel</button>
-                <button id="btnSave" class="w-[50%] p-1 bg-white text-[#007FFF] rounded-lg hover:scale-[1.05]">Save</button>
+                <button id="btnCancel" class="w-[49%] p-1 bg-white text-red-500 rounded-lg hover:scale-[1.05]">Cancel</button>
+                <button id="btnSave" class="w-[49%] p-1 bg-white text-[#007FFF] rounded-lg hover:scale-[1.05]">Save</button>
             </div>
         </div>
     </div>
     <!--2nd partie--------------------->
-    <div id="list" class="h-full w-full flex flex-col items-center gap-2 m-1 p-2">
+    <div id="list" class="h-full max-w-full flex flex-col items-center gap-2 m-1 p-2">
         <div class="w-full h-20 flex justify-center items-center">
             <h1 class="text-2xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-br from-white/100 to-white/30 backdrop-blur-sm drop-shadow-xl">
                 Gestion des rendez-vous</h1>
         </div>
-        <div class="w-full flex flex-col gap-1 items-center">
+        <div class="w-full flex flex-col md:flex-row gap-1 items-center">
             <!--search + button add + button filter-->
             
             <div class="w-full h-[40px] bg-white/20 border border-white/30 rounded-lg flex items-center">
                 <i class="p-2 fa-solid fa-magnifying-glass"></i>
-                <input id="search" type="text" placeholder="search" class="w-full px-4">
+                <input id="search" type="text" placeholder="Rechercher un patient..." class="w-full px-4">
             </div>
             
             <div class="w-full flex justify-center gap-2">
-                <select id="filter" class="bg-white/20 border border-white/30 rounded-lg pl-2 w-[49%] py-1" required>
+                <select id="filter" class="flex-1  bg-white/10 backdrop-blur-md border border-white/20 rounded-xl px-2 py-2 text-white text-sm focus:outline-none appearance-none cursor-pointer" required>
                     <option class="dark:bg-black" value=""> filter</option>
-                    <option class="dark:bg-black" value="consultation">Consultation</option>
-                    <option class="dark:bg-black" value="suivi">Suivi médical</option>
-                    <option class="dark:bg-black" value="urgence">Urgence</option>
-                    <option class="dark:bg-black" value="bilan">Bilan de santé</option>
-                    <option class="dark:bg-black" value="examen">Examen</option>
-                    <option class="dark:bg-black" value="analyse">Analyse</option>
-                    <option class="dark:bg-black" value="vaccination">Vaccination</option>
-                    <option class="dark:bg-black" value="certificat">Certificat</option>
+                    <option class="dark:bg-black text-black dark:text-white" value="consultation">Consultation</option>
+                    <option class="dark:bg- text-black dark:text-white" value="suivi medical">Suivi médical</option>
+                    <option class="dark:bg-black text-black dark:text-white" value="urgence">Urgence</option>
+                    <option class="dark:bg-black text-black dark:text-white" value="bilan de sante">Bilan de santé</option>
+                    <option class="dark:bg-black text-black dark:text-white" value="examen">Examen</option>
+                    <option class="dark:bg-black text-black dark:text-white" value="analyse">Analyse</option>
+                    <option class="dark:bg-black text-black dark:text-white" value="vaccination">Vaccination</option>
+                    <option class="dark:bg-black text-black dark:text-white" value="certificat">Certificat</option>
                 </select>
-                <button id="btnAjouter" class="w-[49%] bg-white/30 border border-white/50 text-[#007FFF] px-6 py-2 rounded-lg transition-all duration-300 hover:bg-white/40 hover:shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:-translate-y-0.5 active:scale-95">
+                <button id="btnAjouter" class="flex-1 bg-white/30 border border-white/50 text-[#007FFF] px-6 py-2 rounded-lg transition-all duration-300 hover:bg-white/40 hover:shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:-translate-y-0.5">
                     + ajouter
                 </button>
             </div>
@@ -105,15 +105,6 @@
                     </tr>
                 </thead>
                 <tbody id="tbody" class="text-[#002B5B]/90">
-                    <tr class="border-t border-white/20 hover:bg-white/20 transition-colors">
-                        <td class="px-6 py-4">01</td>
-                        <td class="px-6 py-4">Fathi Leghris</td>
-                        <td class="px-6 py-4">0602751973</td>
-                        <td class="px-6 py-4">leghrisfathi2004@gmail.com</td>
-                        <td class="px-6 py-4">visit</td>
-                        <td class="px-6 py-4">02/01/2026</td>
-                        <td class="px-6 py-4"><button class="bg-red-100 text-red-600 px-3 py-1 rounded-full text-xs font-bold">Suppreme</button></td>
-                    </tr>
                 </tbody>
             </table>
         </div>
@@ -129,7 +120,7 @@
                     <i class="fa-solid fa-angle-right"></i>
                 </button>
             </div>
-            
+            <!--add the responsive part-->
     </div>
     <script src="script.js"></script>
 </body>
