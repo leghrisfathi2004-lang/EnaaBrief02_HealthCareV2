@@ -1,96 +1,43 @@
-# EnaaBrief02_HealthCareV2
-Page unique “Pré-admission v2” comprenant :
+# 🏥 HealthCare V2 - Pré-admission
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/66fe5aee-6850-44b2-8c47-76a37a8e62e6" />
 
-1) Formulaire amélioré (mêmes champs que la v1) :
+![Status](https://img.shields.io/badge/Status-Completed-success?style=flat-square)
+![Version](https://img.shields.io/badge/Version-V2-blue?style=flat-square)
 
-Nom, Prénom, Téléphone, Email, Motif, Date souhaitée
+Projet web de pré-admission destiné au domaine de la santé.
 
-2) Expérience utilisateur (UX) :
+## 🛠️ Technologies Used
 
-Affichage d’un compteur : “X demandes au total”
+<img src="https://img.icons8.com/color/48/html-5--v1.png" width="22"/> **HTML5** — Structure de la page.
 
-Messages UI intégrés et visibles :
+<img src="https://img.icons8.com/color/48/tailwind_css.png" width="22"/> **Tailwind CSS** — Design responsive et moderne
 
-succès (ex: “Demande ajoutée”)
+<img src="https://img.icons8.com/color/48/javascript--v1.png" width="22"/> **JavaScript** — Logique, validation et interactions
 
-erreur (ex: “Veuillez compléter les champs obligatoires”)
+## 📝 Features
 
-Conserver : ajout + affichage dynamique + suppression (comme v1)
+- Patient pre-admission form  
+- Field validation for secure data entry  
+- Dynamic table display of patient requests  
+- Delete patient records 
+- Search patients by name, filter requests by admission reason  
+- Dark / Light mode support   
+- LocalStorage integration for data persistence
 
-3) Recherche OU filtre (au choix, 1 seul maximum)
+## 🚀 How to Use
 
-Recherche simple (nom / prénom / téléphone / email)
+1. Open the project live on GitHub Pages: 
+>[HealthCare V2 - Pré-admission](https://leghrisfathi2004-lang.github.io/EnaaBrief02_HealthCareV2/)
+2. Fill in the pre-admission form with patient details.  
+3. Submit the form to see the patient added dynamically to the table.  
+4. Use search and filter to find specific patient requests.  
+5. Toggle Dark / Light mode as needed.  
+6. Delete patient records if necessary.  
 
-ou
+> All data is stored locally in your browser using LocalStorage.
 
-Filtre par motif
+## 🧑‍💻 Author
 
-==> Backlog technique
+**Leghris Fathi**
 
-==> HTML & CSS
-
-Structure HTML sémantique claire (sections, titres, zones : formulaire / liste / messages)
-
-Formulaire accessible : label liés aux input, champs obligatoires identifiés
-
-CSS propre et maintenable :
-
-variables CSS (couleurs, espacements, radius)
-
-mise en page cohérente (alignements, marges/paddings)
-
-états : :focus, :hover, :disabled (boutons + inputs)
-
-Responsive design obligatoire (mobile-first) :
-
-3 formats minimum : mobile / tablette / desktop
-
-sur mobile : champs larges + boutons accessibles
-
-la liste doit rester lisible :
-
-soit tableau avec scroll horizontal contrôlé,
-
-soit affichage “cartes”
-
-==> JavaScript
-
-Validation minimale des champs obligatoires
-
-Mise à jour cohérente du compteur
-
-Recherche OU filtre (1 seul) appliqué à l’affichage
-
-DOM : rendu propre (sans casser l’UI), suppression fonctionnelle
-
-Événements : submit, click, input (si recherche)
-
-Bonus Challenge — Mode sombre (Dark Mode)
-
-Pour améliorer le confort d’utilisation (surtout en fin de journée ou en environnement peu lumineux), la clinique souhaite un mode sombre.
-
-Attendu :
-
-Ajouter un toggle (ex : bouton ou switch) : “Mode clair / Mode sombre”
-
-Le mode choisi doit modifier au minimum :
-
-le fond de page
-
-les textes
-
-les inputs (fond + bordures + texte)
-
-les boutons
-
-les messages UI (succès / erreur)
-
-Le mode doit rester lisible (contrastes corrects) et garder une hiérarchie visuelle claire
-
-Contraintes techniques :
-
-Implémentation via variables CSS (recommandé) :
-
-Variables par défaut = thème clair
-
-Une classe (ex : .dark) sur body pour basculer en sombre
+**ENAA | Simplon**
