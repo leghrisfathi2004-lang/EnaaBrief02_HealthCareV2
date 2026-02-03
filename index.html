@@ -4,12 +4,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/css">
+        .dark body {
+            background: linear-gradient(to bottom, #040D1A, #0A192F, #112240);
+            color: white;
+        }
+
+        .dark body h1,
+        .dark body p,
+        .dark body input,
+        .dark body select {
+            color: white;
+        }
+
+        .dark table {
+            background-color: #112240;
+            border-color: #233554;
+        }
+        .dark #tbody{
+            color: #ccd6f6;
+        }
+        .dark thead {
+            background-color: #041021;
+            color: #ccd6f6;
+        }
+        .dark body option {
+            background-color: #000;
+            color: white;
+        }
+
+        .dark #btnSave {
+            background-color: #112240;
+            border: 1px solid #64ffda;
+            color: #64ffda !important; /* Neon Cyan text */
+        }
+
+        .dark #btnCancel {
+            background-color: transparent;
+            border: 1px solid #f43f5e; /* Rose/Red border */
+            color: #f43f5e !important;
+        }
+
+        .dark #suppreme {
+            background-color: #7f1d1d; /* Deep Dark Red */
+            color: white;
+        }
+
+        .dark .btn-add {
+            background-color: rgba(255, 255, 255, 0.05) !important;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: #3b82f6 !important;
+        }
+</style>
+
+    </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
     <title>Document</title>
 </head>
-<body class="min-h-screen w-full overflow-x-hidden bg-gradient-to-b from-[#3386E0] via-[#4DA6FF] to-[#80E5FF] text-[#002B5B] dark:from-[#040D1A] dark:via-[#0A192F] dark:to-[#112240] dark:text-white antialiased lg:flex lg:justify-center">
+<body class=" min-h-screen w-full overflow-x-hidden bg-gradient-to-b from-[#3386E0] via-[#4DA6FF] to-[#80E5FF] text-[#002B5B] antialiased lg:flex lg:justify-center">
 
-    <div id="modal" class="hidden flex flex-col items-center gap-3">
+    <div id="modal" class="hidden flex flex-col items-center gap-3 lg:justify-center">
         <div class="w-full flex items-center justify-center">
             <h1 class="mt-2 bg-white/20 border border-white/30 rounded-lg w-[50%] text-center font-bold text-lg py-4 m-5">Ajouter un rendez-vous</h1>
 
@@ -19,7 +73,7 @@
         </div>
         
         
-        <div class="flex flex-col gap-3 w-[80%]">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
             <div class="w-full">
                 <h1 class="pl-3 text-whit font-semibold">nom complete:</h1>
                 <input id="nom" type="text" class="bg-white/20 border border-white/30 rounded-lg px-3 w-full py-1" placeholder="entre nom complete">
@@ -35,15 +89,15 @@
             <div class="w-full">
                 <h1 class="pl-3 text-whit font-semibold">motif:</h1>
                 <select id="motif" class="bg-white/20 border border-white/30 rounded-lg px-3 w-full py-1">
-                    <option class="dark:bg-black" value="">-- Sélectionnez un motif --</option>
-                    <option class="dark:bg-black" value="consultation">Consultation</option>
-                    <option class="dark:bg-black" value="suivi médical">Suivi médical</option>
-                    <option class="dark:bg-black" value="urgence">Urgence</option>
-                    <option class="dark:bg-black" value="bilan">Bilan de santé</option>
-                    <option class="dark:bg-black" value="examen">Examen</option>
-                    <option class="dark:bg-black" value="analyse">Analyse</option>
-                    <option class="dark:bg-black" value="vaccination">Vaccination</option>
-                    <option class="dark:bg-black" value="certificat">Certificat</option>
+                    <option class="" value="">-- Sélectionnez un motif --</option>
+                    <option class="" value="consultation">Consultation</option>
+                    <option class="" value="suivi médical">Suivi médical</option>
+                    <option class="" value="urgence">Urgence</option>
+                    <option class="" value="bilan">Bilan de santé</option>
+                    <option class="" value="examen">Examen</option>
+                    <option class="" value="analyse">Analyse</option>
+                    <option class="" value="vaccination">Vaccination</option>
+                    <option class="" value="certificat">Certificat</option>
                 </select>
             </div>
 
@@ -53,8 +107,8 @@
             </div>
 
             <div class="flex justify-center items-center gap-5 font-semibold pb-5">
-                <button id="btnCancel" class="w-[49%] p-1 bg-white text-red-500 rounded-lg hover:scale-[1.05]">Cancel</button>
-                <button id="btnSave" class="w-[49%] p-1 bg-white text-[#007FFF] rounded-lg hover:scale-[1.05]">Save</button>
+                <button id="btnCancel" class="w-[50%] p-1 bg-white text-red-500 rounded-lg hover:scale-[1.05]">Cancel</button>
+                <button id="btnSave" class="w-[50%] p-1 bg-white text-[#007FFF] rounded-lg hover:scale-[1.05]">Save</button>
             </div>
         </div>
     </div>
@@ -64,7 +118,7 @@
             <h1 class="text-2xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-br from-white/100 to-white/30 backdrop-blur-sm drop-shadow-xl">
                 Gestion des rendez-vous</h1>
         </div>
-        <div class="w-full flex flex-col md:flex-row gap-1 items-center">
+        <div class="w-full flex flex-col lg:flex-row gap-1 items-center">
             <!--search + button add + button filter-->
             
             <div class="w-full h-[40px] bg-white/20 border border-white/30 rounded-lg flex items-center">
@@ -72,21 +126,22 @@
                 <input id="search" type="text" placeholder="Rechercher un patient..." class="w-full px-4">
             </div>
             
-            <div class="w-full flex justify-center gap-2">
+            <div class="w-full flex-col md:flex-row flex  justify-center gap-2">
                 <select id="filter" class="flex-1  bg-white/10 backdrop-blur-md border border-white/20 rounded-xl px-2 py-2 text-white text-sm focus:outline-none appearance-none cursor-pointer" required>
-                    <option class="dark:bg-black" value=""> filter</option>
-                    <option class="dark:bg-black text-black dark:text-white" value="consultation">Consultation</option>
-                    <option class="dark:bg- text-black dark:text-white" value="suivi medical">Suivi médical</option>
-                    <option class="dark:bg-black text-black dark:text-white" value="urgence">Urgence</option>
-                    <option class="dark:bg-black text-black dark:text-white" value="bilan de sante">Bilan de santé</option>
-                    <option class="dark:bg-black text-black dark:text-white" value="examen">Examen</option>
-                    <option class="dark:bg-black text-black dark:text-white" value="analyse">Analyse</option>
-                    <option class="dark:bg-black text-black dark:text-white" value="vaccination">Vaccination</option>
-                    <option class="dark:bg-black text-black dark:text-white" value="certificat">Certificat</option>
+                    <option class="" value=""> filter</option>
+                    <option class=" text-black " value="consultation">Consultation</option>
+                    <option class=" text-black " value="suivi medical">Suivi médical</option>
+                    <option class=" text-black " value="urgence">Urgence</option>
+                    <option class=" text-black " value="bilan de sante">Bilan de santé</option>
+                    <option class=" text-black " value="examen">Examen</option>
+                    <option class=" text-black " value="analyse">Analyse</option>
+                    <option class=" text-black " value="vaccination">Vaccination</option>
+                    <option class=" text-black " value="certificat">Certificat</option>
                 </select>
                 <button id="btnAjouter" class="flex-1 bg-white/30 border border-white/50 text-[#007FFF] px-6 py-2 rounded-lg transition-all duration-300 hover:bg-white/40 hover:shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:-translate-y-0.5">
                     + ajouter
                 </button>
+                <button id="btnSwitch" class="flex-1 bg-white/30 border border-white/50 text-[#007FFF] px-6 py-2 rounded-lg transition-all duration-300 hover:bg-white/40 hover:shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:-translate-y-0.5">mode☀️</button>
             </div>
 
         </div>
@@ -95,13 +150,13 @@
             <table class="w-full text-left border-collapse">
                 <thead class="bg-white/20 text-[#002B5B] uppercase text-sm font-bold">
                     <tr>
-                        <th class="px-2 rounded">ID</th>
-                        <th class="px-2">Full Name</th>
-                        <th class="px-2">Telephone</th>
-                        <th class="px-2">Email</th>
-                        <th class="px-2">Reason</th>
-                        <th class="px-2">Date</th>
-                        <th class="px-2 rounded-tr-xl">Action</th>
+                        <th class="p-2 rounded-tl">ID</th>
+                        <th class="p-2 ">Nom complete</th>
+                        <th class="p-2 ">Telephone</th>
+                        <th class="p-2 ">Email</th>
+                        <th class="p-2 ">Motif</th>
+                        <th class="p-2 ">Date</th>
+                        <th class="p-2  rounded-tr">Action</th>
                     </tr>
                 </thead>
                 <tbody id="tbody" class="text-[#002B5B]/90">

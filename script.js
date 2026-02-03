@@ -3,6 +3,7 @@ let buttonAdd = document.getElementById('btnAjouter');
 let buttonSave = document.getElementById('btnSave');
 let buttonCancel = document.getElementById('btnCancel');
 let search = document.getElementById('search');
+let buttonSwitch = document.getElementById('btnSwitch');
 
 //pagination ------
 let morePages = document.getElementById('pagination');
@@ -15,7 +16,7 @@ let pagenbr = 1;
 let list = document.getElementById('list');
 let modal = document.getElementById('modal');
 let table = document.getElementById("tbody");
-
+let elmnts = document.documentElement;
 
 // Events Listners --------------------------------
 document.addEventListener('DOMContentLoaded' , () =>{
@@ -46,6 +47,7 @@ buttonAdd.addEventListener('click', () => {
 buttonSave.addEventListener('click', () => {
     if((document.getElementById('nom').value === '')||(document.getElementById('email').value === '')||(document.getElementById('telephone').value === '')||(document.getElementById('motif').value === '')||(document.getElementById('date').value === ''))
         {
+            let msg = document.getElementById('message');
             setTimeout(() => {
                 msg.classList.remove('-translate-x-full','opacity-0');
                 msg.classList.add('translate-x-0','opacity-100');
@@ -54,7 +56,7 @@ buttonSave.addEventListener('click', () => {
                 msg.classList.remove('translate-x-0','opacity-100');
                 msg.classList.add('-translate-x-full','opacity-0');
             }, 3000)
-            let msg = document.getElementById('message');
+            return;
         }
     let requests = JSON.parse(localStorage.getItem('requests'));
     let Id = idcount();
@@ -120,6 +122,16 @@ document.getElementById('filter').addEventListener('change', () =>{
     displayP(resultat);
 });
 
+buttonSwitch.addEventListener('click', () =>{
+    console.log('swiitch1')
+    elmnts.classList.toggle('dark');
+    const isDark = elmnts.classList.contains('dark');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    buttonSwitch.textContent = isDark ? "☀️" : "🌙";
+    console.log('swiitch')
+
+})
+
 // functions -------------------------------
 function paginate(tab, pageNumber) {
     const onepage = 5;
@@ -168,7 +180,7 @@ function onePage(tab){
                         <td class="px-6 py-4">${el.email}</td>
                         <td class="px-6 py-4">${el.motif}</td>
                         <td class="px-6 py-4">${el.date}</td>
-                        <td class="px-6 py-4"><button onclick="deleteTr(this)" class="bg-red-100 dark:bg-red-800 text-red-300 px-3 py-1 rounded-full text-xs font-bold">Suppreme</button></td>`;
+                        <td class="px-6 py-4"><button id="suppreme" onclick="deleteTr(this)" class="bg-red-100 dark:bg-red-800 text-red-300 px-3 py-1 rounded-full text-xs font-bold">Suppreme</button></td>`;
         table.appendChild(tr);
     });
 }
